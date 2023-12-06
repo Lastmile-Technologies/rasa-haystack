@@ -14,19 +14,32 @@ nlu:
 
 - intent: greet
   examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
+    - hey 
+    - hello 
+    - hi 
+    - hello there 
+    - good morning 
+    - good evening 
     - moin
-    - hey there
+    - hey there 
     - let's go
     - hey dude
     - goodmorning
     - goodevening
     - good afternoon
+    - Γειά σας
+    - Γεια
+    - Γειά σου φίλε
+    - Γειά σου
+    - Χαίρετε
+    - Χαιρεται
+    - χαίρεται
+    - χαιρεται
+    - Καλημέρα
+    - Καλησπέρα
+    - Γειά σου
+    - Ευχές
+
 
 - intent: goodbye
   examples: |
@@ -41,6 +54,24 @@ nlu:
     - see you around
     - bye bye
     - see you later
+    - Αντίο
+    - Αντιο
+    - αντίο
+    - αντιο
+    - Αντίο σας
+    - Αντίο σου
+    - αντίο σας
+    - αντίο σου
+    - Χάρηκα που τα είπαμε
+    - Τα λέμε αργότερα
+    - Χαιρετώ
+    - Σε αποχαιρετώ
+    - Χαιρετίσματα
+    - Καλό βράδυ
+    - καλο βραδυ
+    - Καληνύχτα
+    - δεν χρειάζομαι κάτι άλλο
+    - Δεν χρειαζομαι κατι αλλο
 
 - intent: affirm
   examples: |
@@ -50,6 +81,15 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - Ναι
+    - ναι
+    - Φυσικά
+    - Σωστά
+    - σωστά
+    - Ναι ακούγεται καλό
+    - θα το ήθελα
+    - Ναι σωστά
+    - Ναι ναι
 
 - intent: deny
   examples: |
@@ -60,6 +100,16 @@ nlu:
     - don't like that
     - no way
     - not really
+    - όχι
+    - οχι
+    - Όχι
+    - Οχι
+    - Ποτέ
+    - Όχι ευχαριστώ
+    - Δεν νομίζω
+    - Σε καμία περίπτωση
+    - Όχι ποτέ
+    - όχι ποτέ
 
 - intent: mood_great
   examples: |
@@ -101,3 +151,36 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+    - Είσαι ρομπότ;
+    - είσαι ρομπότ;
+    - Είσαι άνθρωπος;
+    - Μιλάω με ρομπότ;
+    - Μιλάω με άνθρωπο;
+    - Με ποιόν μιλάω;
+    - Έχεις τεχνιτή νοημοσύνη
+    - Είσαι bot
+    - Είσαι chatbot
+    - είσαι bot
+    - είσαι chatbot
+    - εισαι bot
+    - εισαι chatbot
+    - Ποιό είναι το όνομα σου
+    - Εχεις όνομα
+    - Τι είσαι
+    - Ποιός είσαι
+    - πες μου για σένα
+    - θέλω να μάθω για σένα
+    - πες μου για τον εαυτό σου
+    - ποιος ειναι ο σκοπός σου
+
+
+- intent: request_human
+  examples: |
+    - I want to talk with someone
+    - Can you connect me to someone?
+    - I want to speak with a real person
+    - I want to speak with a human
+    - Μπορώ να μιλήσω με κάποιον άνθρωπο?
+    - Δεν μου κάνεις εσυ
+    - θέλω να με συνδέσεις με κάποιον συνεργάτη σου
+    - Σύνδεσέ με

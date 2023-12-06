@@ -11,6 +11,8 @@ intents:
     use_entities: true
 - goodbye:
     use_entities: true
+- request_human:
+    use_entities: true
 - affirm:
     use_entities: true
 - deny:
@@ -23,23 +25,75 @@ intents:
     use_entities: true
 - nlu_fallback:
     use_entities: true
-entities: []
-slots: {}
+entities:
+  - language
+
+
+slots:
+  language:
+    type: categorical
+    influence_conversation: true
+    values:
+        - English
+        - Greek
+    mappings:
+      - type: from_entity
+        entity: language
+
 responses:
   utter_greet:
-  - text: Hey! How are you?
+  - condition:
+      - type: slot
+        name: language
+        value: English
+    text: "Hey! How can I help you?"
+  - text: "Γεία σου , πως μπορώ να σε βοηθήσω?"
+
   utter_cheer_up:
   - image: https://i.imgur.com/nGF1K8f.jpg
     text: 'Here is something to cheer you up:'
+
+  utter_i_am_connecting_you_with_a_human:
+    - condition:
+        - type: slot
+          name: language
+          value: English
+      text: "I am connecting you with the first available associate, please wait"
+    - text: "Σας συνδέω με τον πρώτο διαθέσιμο συνεργάτη μας, παρακαλώ περιμένετε"
+
   utter_did_that_help:
-  - text: Did that help you?
+    - condition:
+        - type: slot
+          name: language
+          value: English
+      text: "Did my answer helped you?"
+    - text: "Σας βοηθησε αυτή η απάντηση?"
+
   utter_happy:
   - text: Great, carry on!
+
+
   utter_goodbye:
-  - text: Bye
+    - condition:
+        - type: slot
+          name: language
+          value: English
+      text: "Goodbye!"
+    - text: "Αντίο σας!"
+
   utter_iamabot:
-  - text: I am a bot, powered by Rasa.
+    - condition:
+        - type: slot
+          name: language
+          value: English
+      text: "My name is Lastmilybot, the official chatbot of lastmily"
+    - text: "Είμαι η Lastmilybot το επίσημο chatbot της lastmily"
+
 actions:
 - call_haystack
+- action_request_human
+- action_set_language_slot
+- action_session_start
 forms: {}
+
 e2e_actions: []

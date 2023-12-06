@@ -1,0 +1,9 @@
+FROM rasa/rasa-sdk:2.8.0
+WORKDIR /app
+
+COPY . /app/actions
+#COPY ./data /app/data
+
+USER root
+EXPOSE 5055
+USER 1001
