@@ -11,7 +11,6 @@ VOLUME /app
 VOLUME /app/data
 VOLUME /app/models
 RUN apt-get update && \
-    apt-get install -y apparmor \
     apt-get install -y build-essential
 
 
