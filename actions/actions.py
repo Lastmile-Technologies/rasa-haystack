@@ -22,7 +22,7 @@ class ActionHaystack(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        url = "http://localhost:8000/query"
+        url = "http://haystack_api:8000/query"
         payload = {"query": str(tracker.latest_message["text"])}
         headers = {
             'Content-Type': 'application/json'
