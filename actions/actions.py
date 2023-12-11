@@ -56,6 +56,7 @@ class ActionSessionStart(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         # Add your code or actions that need to be performed at the start of the conversation here
+
         custom_data = tracker.get_slot("language2")
         print(custom_data)
         # print("I SET LANGUAGE111111111111 TO : " + custom_data)
