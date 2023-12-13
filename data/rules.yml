@@ -2,12 +2,16 @@ version: "2.0"
 
 rules:
 - rule: Welcome
-  conversation_start: true
   steps:
     - intent: greet
-    - action: action_session_start
     - action: utter_greet
 
+#- rule: Welcome new
+#  conversation_start: true
+#  steps:
+#    - intent: initialGreet
+#    - action: action_session_start
+#    - action: utter_greet
 
 - rule: Query Haystack anytime the user has a direct question for your document base
   steps:

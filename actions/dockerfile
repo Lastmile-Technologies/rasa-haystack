@@ -1,9 +1,10 @@
-FROM rasa/rasa-sdk:2.8.0
+FROM rasa/rasa-sdk:latest
 WORKDIR /app
 
 COPY . /app/actions
 #COPY ./data /app/data
-
+RUN pip install --upgrade pip
+RUN pip install requests
 USER root
 EXPOSE 5055
 USER 1001

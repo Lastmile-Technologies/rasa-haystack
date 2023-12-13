@@ -41,6 +41,10 @@ nlu:
     - Ευχές
 
 
+- intent: initialGreet
+  examples: |
+    -[mlks](userName)
+
 - intent: goodbye
   examples: |
     - good afternoon

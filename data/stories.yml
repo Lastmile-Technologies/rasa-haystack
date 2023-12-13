@@ -9,9 +9,11 @@ stories:
 #    - language: english
 
 
-#- story: session start
-#  steps:
-#    - action: action_session_start
+- story: session start
+  steps:
+    - intent: initialGreet
+    - action: action_session_start
+    - action: utter_greet
 
 
 

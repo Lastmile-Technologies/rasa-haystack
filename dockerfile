@@ -17,6 +17,7 @@ RUN apt-get update && \
 
 RUN pip install --upgrade pip setuptools
 RUN pip install --verbose --no-cache-dir -r requirements.txt
+#RUN pip install -U setuptools wheel
 RUN python -m spacy download en_core_web_md
 RUN rasa train
 

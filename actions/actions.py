@@ -56,14 +56,28 @@ class ActionSessionStart(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         # Add your code or actions that need to be performed at the start of the conversation here
-
-        custom_data = tracker.get_slot("language2")
+        # events = tracker.events
+        # events2 = domain.keys()
+        # user_events = []
+        # for e in events:
+        #     if e['event'] == 'user':
+        #         user_events.append(e)
+        #
+        # custom_data = user_events
+        custom_data = tracker.get_slot("userName")
+        print("I USERNAME TOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO : " )
         print(custom_data)
-        # print("I SET LANGUAGE111111111111 TO : " + custom_data)
-        language_value = custom_data
-        # language_value = tracker.get_slot("language2") # Replace with your environment variable name # Replace with your environment variable name
-        print("I SET LANGUAGE TO : "+language_value)
-        # language_value = 'Greek'
+        # print("I domain TOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO : ")
+        # print(events2)
+        # SlotSet("userName", custom_data),
+
+        # custom_data = tracker.get_slot("language2")
+        # print(custom_data)
+        # # print("I SET LANGUAGE111111111111 TO : " + custom_data)
+        # language_value = custom_data
+        # # language_value = tracker.get_slot("language2") # Replace with your environment variable name # Replace with your environment variable name
+        # print("I SET LANGUAGE TO : "+language_value)
+        language_value = 'Greek'
         if language_value in ["English", "Greek"]:
             return [SlotSet("language", language_value)]
         return [ActionExecuted("action_session_start")]

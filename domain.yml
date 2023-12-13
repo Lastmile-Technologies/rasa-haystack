@@ -9,6 +9,8 @@ intents:
     use_entities: true
 - greet:
     use_entities: true
+- initialGreet:
+    use_entities: true
 - goodbye:
     use_entities: true
 - request_human:
@@ -27,6 +29,7 @@ intents:
     use_entities: true
 entities:
   - language
+  - userName
 
 
 slots:
@@ -39,6 +42,13 @@ slots:
     mappings:
       - type: from_entity
         entity: language
+
+  userName:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: userName
 
 responses:
   utter_greet:
