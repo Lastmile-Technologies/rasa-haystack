@@ -13,10 +13,10 @@ rules:
 #    - action: action_session_start
 #    - action: utter_greet
 
-- rule: Query Haystack anytime the user has a direct question for your document base
-  steps:
-  - intent: knowledge_question
-  - action: call_haystack
+#- rule: Query Haystack anytime the user has a direct question for your document base
+#  steps:
+#  - intent: knowledge_question
+#  - action: call_haystack
 
 - rule: Say goodbye anytime the user says goodbye
   steps:
@@ -32,6 +32,33 @@ rules:
   steps:
     - intent: nlu_fallback
     - action: call_haystack
+
+- rule: How are you
+  steps:
+    - intent: how_are_you
+    - action: utter_happy
+
+- rule: Omada
+  steps:
+    - intent: paok
+    - action: utter_paok
+
+- rule: Coursing response
+  steps:
+    - intent: coursing
+    - action: utter_coursing
+
+- rule: outofscoperule
+  steps:
+    - intent: out_of_scope
+    - action: utter_out_of_scope
+
+- rule: thanks
+  steps:
+    - intent: thanks
+    - action: utter_your_welcome
+    - action: utter_anything_else
+
 
 - rule: Connect to human
   steps:

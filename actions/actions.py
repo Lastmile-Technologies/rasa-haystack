@@ -3,8 +3,7 @@
 #
 # See this guide on how to implement these action:
 # https://rasa.com/docs/rasa/custom-actions
-
-
+import logging
 from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
@@ -13,6 +12,8 @@ import requests
 from rasa_sdk.events import ActionExecuted
 import os
 from rasa_sdk.events import SlotSet
+
+logger = logging.getLogger(__name__)
 class ActionHaystack(Action):
 
     def name(self) -> Text:
@@ -27,7 +28,9 @@ class ActionHaystack(Action):
         headers = {
             'Content-Type': 'application/json'
         }
+        logger.info("YEEEEEEEEAAAHHHHHHHHHHHHHHHH")
         response = requests.request("POST", url, headers=headers, json=payload).json()
+        print("")
 
         if response["answers"]:
             answer = response["answers"][0]["answer"]
@@ -55,30 +58,22 @@ class ActionSessionStart(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        # Add your code or actions that need to be performed at the start of the conversation here
-        # events = tracker.events
-        # events2 = domain.keys()
-        # user_events = []
-        # for e in events:
-        #     if e['event'] == 'user':
-        #         user_events.append(e)
-        #
-        # custom_data = user_events
-        custom_data = tracker.get_slot("userName")
-        print("I USERNAME TOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO : " )
-        print(custom_data)
-        # print("I domain TOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO : ")
-        # print(events2)
-        # SlotSet("userName", custom_data),
 
-        # custom_data = tracker.get_slot("language2")
+        # desired_value = tracker.latest_message.get("entities", {}).get("userName", None)
+
+        # custom_data = tracker.get_slot("userName")
+        # logger.info("WTFFFFFFFFFFFFFFFFFFF")
+        # SlotSet("language",tracker.get_slot("language"))
+        #
+        # language_value=custom_data
+        # SlotSet("language", custom_data)
+        # # print("I USERNAME TOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO : " )
         # print(custom_data)
-        # # print("I SET LANGUAGE111111111111 TO : " + custom_data)
-        # language_value = custom_data
-        # # language_value = tracker.get_slot("language2") # Replace with your environment variable name # Replace with your environment variable name
+
         # print("I SET LANGUAGE TO : "+language_value)
-        language_value = 'Greek'
-        if language_value in ["English", "Greek"]:
+        # language_value = 'Greek'
+        if tracker.get_slot("userName") in ["English", "Greek"]:
+            logger.info("MPIKEEEEEEEEEEEEEEEEEEEEEEE")
             return [SlotSet("language", language_value)]
         return [ActionExecuted("action_session_start")]
 

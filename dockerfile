@@ -1,15 +1,17 @@
 FROM rasa/rasa:latest
 WORKDIR '/app'
-COPY . /app
+#COPY . /app
 USER root
 # WORKDIR /app
 # COPY . /app
-COPY ./data /app/data
+#COPY ./data /app/data
 
-COPY requirements.txt .
-VOLUME /app
-VOLUME /app/data
-VOLUME /app/models
+#COPY requirements.txt .
+COPY data /app/data
+COPY [^.]* /app
+
+#VOLUME /app/data
+#VOLUME /app/models
 RUN apt-get update && \
     apt-get install -y build-essential
 

@@ -1,190 +1,304 @@
 version: "2.0"
 
 nlu:
-- intent: knowledge_question
-  examples: |
-    - Can you look this up: what is ?
-    - Look this up: what is?
-    - Can you check: what is?
-    - please check: What is ?
-    - Can you look this up: where is ?
-    - Look this up: where is?
-    - Can you check: where is?
-    - please check: where is ?
-
-- intent: greet
-  examples: |
-    - hey 
-    - hello 
-    - hi 
-    - hello there 
-    - good morning 
-    - good evening 
-    - moin
-    - hey there 
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
-    - Γειά σας
-    - Γεια
-    - Γειά σου φίλε
-    - Γειά σου
-    - Χαίρετε
-    - Χαιρεται
-    - χαίρεται
-    - χαιρεται
-    - Καλημέρα
-    - Καλησπέρα
-    - Γειά σου
-    - Ευχές
+  - intent: out_of_scope
+    examples: |
+      - what is the weather?
+      - what county i am in
+      - i want to go home and sleep
+      - ρωτάω μια εκτός σκοπου ερώτηση
+      - 4 + 2 = ?
+      - dghfgjhgjgmkjh
+      - δφδφηφγφκγμδοκβσ
+      - fsgfdbh,fgl;nmflph;n
+      - τι να φάω
+      - Είμαι εθισμένος στα ναρκωτικά
+      - πεινάω
+      - Πεινάω
+      - Χρειάζομαι μια κοπέλα
+      - Χρειάζομαι γκόμενα
+      - Πρέπει να φάω κέικ
+      - Θέλω να σε παντρευτώ
+      - Θέλω ένα νέο φορητό υπολογιστή
+      - πόσο κάνει 10 + 89;
+      - πόσο κάνει 10 + 89
+      - πεινάω
+      - πεινάω, τι πρέπει εγώ να κάνω;
+      - δεν με νοιάζει πώς είσαι
+      - ελπίζω ότι θα είναι καλύτερα
+      - Ψάχνω για δουλειά
+      - Θέλω παγωτό
+      - Θέλω καφέ
+      - καφεδάκι
+      - πες μου τα κάλαντα
+      - Θέλω coffe
 
 
-- intent: initialGreet
-  examples: |
-    -[mlks](userName)
 
-- intent: goodbye
-  examples: |
-    - good afternoon
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
-    - Αντίο
-    - Αντιο
-    - αντίο
-    - αντιο
-    - Αντίο σας
-    - Αντίο σου
-    - αντίο σας
-    - αντίο σου
-    - Χάρηκα που τα είπαμε
-    - Τα λέμε αργότερα
-    - Χαιρετώ
-    - Σε αποχαιρετώ
-    - Χαιρετίσματα
-    - Καλό βράδυ
-    - καλο βραδυ
-    - Καληνύχτα
-    - δεν χρειάζομαι κάτι άλλο
-    - Δεν χρειαζομαι κατι αλλο
+  - intent: how_are_you
+    examples: |
+      - Τι κάνεις;
+      - Το κανεις;
+      - Πως είσαι;
+      - πως είσαι
+      - Είσαι καλά;
+      - Πως σε βρίσκω;
+      - Πως είσαι;
+      - Τι κάνετε
+      - Πως είστε
+      - Τι χαμπάρια
+      - Πώς πάει
+      - Τι γίνεται
+      - Τι γινεται
+      - How are you?
+      - how are u doing
+      - how are you doing today
+      - are u ok
+      - r u good
+      - im ok and you?
+      - I'm fine, and you?
+      - good u?
 
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-    - Ναι
-    - ναι
-    - Φυσικά
-    - Σωστά
-    - σωστά
-    - Ναι ακούγεται καλό
-    - θα το ήθελα
-    - Ναι σωστά
-    - Ναι ναι
+  - intent: thanks
+    examples: |
+      - thanks
+      - thank you
+      - thanks a lot
+      - thank you very much
+      - k thx
+      - thx a lot
+      - Ευχαριστώ
+      - Εντάξει
+      - Να σαι καλά
+      - Πένα
+      - Τέλεια
+      - Γουσταρω
+      - Ολα πένα
+      - ολα τέλεια
+      
+  - intent: coursing
+    examples: |
+      - αι στο διαολο
+      - αντε γαμήσου
+      - σαλτσα και πηδήξου
+      - είσαι μαλάκας
+      - εισαι μπάσταρδος
+      - γαμιέται η μάνα σου
+      - Είσαι μουνόπανο
+      - το μουνι π σε πέταγε
+      - είσαι καραγκίοζης
+      - Θα σε γαμήσω
+      - fuck you
+      - Fuck your mother
+      - you are an idiot
+      - εισαι ηλίθιος
+      - εισαι χαζος
+      - εισαι ζώο
+      - πουτάνα lastmily
+      -
 
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-    - όχι
-    - οχι
-    - Όχι
-    - Οχι
-    - Ποτέ
-    - Όχι ευχαριστώ
-    - Δεν νομίζω
-    - Σε καμία περίπτωση
-    - Όχι ποτέ
-    - όχι ποτέ
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-    - Είσαι ρομπότ;
-    - είσαι ρομπότ;
-    - Είσαι άνθρωπος;
-    - Μιλάω με ρομπότ;
-    - Μιλάω με άνθρωπο;
-    - Με ποιόν μιλάω;
-    - Έχεις τεχνιτή νοημοσύνη
-    - Είσαι bot
-    - Είσαι chatbot
-    - είσαι bot
-    - είσαι chatbot
-    - εισαι bot
-    - εισαι chatbot
-    - Ποιό είναι το όνομα σου
-    - Εχεις όνομα
-    - Τι είσαι
-    - Ποιός είσαι
-    - πες μου για σένα
-    - θέλω να μάθω για σένα
-    - πες μου για τον εαυτό σου
-    - ποιος ειναι ο σκοπός σου
+  - intent: paok
+    examples: |
+      - τι ομάδα είσαι?
+      - ομάδα?
+      - εισαι παοκ?
+      - r u paok
+      - what omada are you?
+      - what is your favourite team?
 
 
-- intent: request_human
-  examples: |
-    - I want to talk with someone
-    - Can you connect me to someone?
-    - I want to speak with a real person
-    - I want to speak with a human
-    - Μπορώ να μιλήσω με κάποιον άνθρωπο?
-    - Δεν μου κάνεις εσυ
-    - θέλω να με συνδέσεις με κάποιον συνεργάτη σου
-    - Σύνδεσέ με
+  - intent: knowledge_question
+    examples: |
+      - Can you look this up: what is ?
+      - Look this up: what is?
+      - Can you check: what is?
+      - please check: What is ?
+      - Can you look this up: where is ?
+      - Look this up: where is?
+      - Can you check: where is?
+      - please check: where is ?
+      - Πως κανω κάτι στην lastmily
+      - πως δημιουργώ σημειο στη εφαρμογή
+      - Ποιοι είναι οι οδηγοί μου
+      - μπορείς να δείς εκείνο στην πλατφόρμα?
+      - Τι σημαίνει όταν κάνω 
+      - Πως γινεται να
+      
+
+  - intent: greet
+    examples: |
+      - hey 
+      - hello 
+      - hi 
+      - hello there 
+      - good morning 
+      - good evening 
+      - moin
+      - hey there 
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+      - Γειά σας
+      - Γεια
+      - Γειά σου φίλε
+      - Γειά σου
+      - Χαίρετε
+      - Χαιρεται
+      - χαίρεται
+      - χαιρεται
+      - Καλημέρα
+      - Καλησπέρα
+      - Γειά σου
+      - Ευχές
+
+
+  - intent: initialGreet
+    examples: |
+      -[English](language)
+
+  - intent: goodbye
+    examples: |
+      - good afternoon
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+      - Αντίο
+      - Αντιο
+      - αντίο
+      - αντιο
+      - Αντίο σας
+      - Αντίο σου
+      - αντίο σας
+      - αντίο σου
+      - Χάρηκα που τα είπαμε
+      - Τα λέμε αργότερα
+      - Χαιρετώ
+      - Σε αποχαιρετώ
+      - Χαιρετίσματα
+      - Καλό βράδυ
+      - καλο βραδυ
+      - Καληνύχτα
+      - δεν χρειάζομαι κάτι άλλο
+      - Δεν χρειαζομαι κατι αλλο
+
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+      - Ναι
+      - ναι
+      - Φυσικά
+      - Σωστά
+      - σωστά
+      - Ναι ακούγεται καλό
+      - θα το ήθελα
+      - Ναι σωστά
+      - Ναι ναι
+
+
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+      - όχι
+      - οχι
+      - Όχι
+      - Οχι
+      - Ποτέ
+      - Όχι ευχαριστώ
+      - Δεν νομίζω
+      - Σε καμία περίπτωση
+      - Όχι ποτέ
+      - όχι ποτέ
+
+  - intent: mood_great
+    examples: |
+      - perfect
+      - great
+      - amazing
+      - feeling like a king
+      - wonderful
+      - I am feeling very good
+      - I am great
+      - I am amazing
+      - I am going to save the world
+      - super stoked
+      - extremely good
+      - so so perfect
+      - so good
+      - so perfect
+
+  - intent: mood_unhappy
+    examples: |
+      - my day was horrible
+      - I am sad
+      - I don't feel very well
+      - I am disappointed
+      - super sad
+      - I'm so sad
+      - sad
+      - very sad
+      - unhappy
+      - not good
+      - not very good
+      - extremly sad
+      - so saad
+      - so sad
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+      - Είσαι ρομπότ;
+      - είσαι ρομπότ;
+      - Είσαι άνθρωπος;
+      - Μιλάω με ρομπότ;
+      - Μιλάω με άνθρωπο;
+      - Με ποιόν μιλάω;
+      - Έχεις τεχνιτή νοημοσύνη
+      - Είσαι bot
+      - Είσαι chatbot
+      - είσαι bot
+      - είσαι chatbot
+      - εισαι bot
+      - εισαι chatbot
+      - Ποιό είναι το όνομα σου
+      - Εχεις όνομα
+      - Τι είσαι
+      - Ποιός είσαι
+      - πες μου για σένα
+      - θέλω να μάθω για σένα
+      - πες μου για τον εαυτό σου
+      - ποιος ειναι ο σκοπός σου
+
+
+  - intent: request_human
+    examples: |
+      - I want to talk with someone
+      - Can you connect me to someone?
+      - I want to speak with a real person
+      - I want to speak with a human
+      - Μπορώ να μιλήσω με κάποιον άνθρωπο?
+      - Δεν μου κάνεις εσυ
+      - θέλω να με συνδέσεις με κάποιον συνεργάτη σου
+      - Σύνδεσέ με

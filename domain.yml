@@ -27,6 +27,18 @@ intents:
     use_entities: true
 - nlu_fallback:
     use_entities: true
+- thanks:
+    use_entities: true
+- how_are_you:
+    use_entities: true
+- out_of_scope:
+    use_entities: true
+- paok:
+    use_entities: true
+- coursing:
+    use_entities: true
+
+
 entities:
   - language
   - userName
@@ -59,6 +71,54 @@ responses:
     text: "Hey! How can I help you?"
   - text: "Γεία σου , πως μπορώ να σε βοηθήσω?"
 
+  utter_coursing:
+    - condition:
+        - type: slot
+          name: language
+          value: English
+      text: "I'm sorry to hear that you feel that way. I am only here to help you , but i promise i will get better over time"
+    - text: "Λυπάμαι που νιώθεις έτσι. Είμαι εδώ μόνο για να σε βοηθήσω, υπόσχομαι οτι θα γίνω καλύτερη όσο περνάει ο καιρός."
+
+  utter_out_of_scope:
+    - condition:
+        - type: slot
+          name: language
+          value: English
+      text: "I am sorry i can't help you with that"
+    - text: "Λυπάμαι δεν μπορώ να σας βοηθήσω με αυτο"
+
+  utter_paok:
+    - condition:
+        - type: slot
+          name: language
+          value: English
+      text: "I support the team of MPAOK"
+    - text: "Ειμαι ΜΠΑΟΚ"
+
+  utter_your_welcome:
+    - condition:
+        - type: slot
+          name: language
+          value: English
+      text: "You're Welcome"
+    - text: "Παρακαλώ"
+
+  utter_sad:
+    - condition:
+        - type: slot
+          name: language
+          value: English
+      text: "I am sorry"
+    - text: "Λυπάμαι!"
+
+  utter_anything_else:
+    - condition:
+        - type: slot
+          name: language
+          value: English
+      text: "May i help you with anything else?"
+    - text: "Μπορώ να σας βοηθησω με κάτι αλλο?"
+
   utter_cheer_up:
   - image: https://i.imgur.com/nGF1K8f.jpg
     text: 'Here is something to cheer you up:'
@@ -80,7 +140,12 @@ responses:
     - text: "Σας βοηθησε αυτή η απάντηση?"
 
   utter_happy:
-  - text: Great, carry on!
+    - condition:
+        - type: slot
+          name: language
+          value: English
+      text: "Great, carry on"
+    - text: "Tελεια!"
 
 
   utter_goodbye:

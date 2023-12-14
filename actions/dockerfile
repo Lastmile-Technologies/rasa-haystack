@@ -1,7 +1,8 @@
-FROM rasa/rasa-sdk:latest
+FROM rasa/rasa-sdk:3.7.0
 WORKDIR /app
 
-COPY . /app/actions
+#COPY . /app/actions
+#COPY . /app/actions
 #COPY ./data /app/data
 RUN pip install --upgrade pip
 RUN pip install requests
