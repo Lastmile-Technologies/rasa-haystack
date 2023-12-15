@@ -28,16 +28,19 @@ class ActionHaystack(Action):
         headers = {
             'Content-Type': 'application/json'
         }
-        logger.info("YEEEEEEEEAAAHHHHHHHHHHHHHHHH")
+        logger.info("222222222222222222222222222222222222222222222222222222222222222222")
         response = requests.request("POST", url, headers=headers, json=payload).json()
-        print("")
 
         if response["answers"]:
             answer = response["answers"][0]["answer"]
+            logger.info("4444444444444444444444444444444444444444444444")
+            logger.info(response["answers"][0]['score'])
+            score=response["answers"][0]['score']
         else:
             answer = "No Answer Found!"
 
-        dispatcher.utter_message(text=answer)
+        dispatcher.utter_message(text=answer,score=score)
+
 
         return []
 

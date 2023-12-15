@@ -76,6 +76,7 @@ nlu:
       - Ολα πένα
       - ολα τέλεια
       
+      
   - intent: coursing
     examples: |
       - αι στο διαολο
