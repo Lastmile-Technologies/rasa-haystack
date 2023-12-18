@@ -8,7 +8,15 @@ USER root
 
 #COPY requirements.txt .
 COPY data /app/data
-COPY [^.]* /app
+COPY config.yml /app
+COPY credentials.yml /app
+COPY data /app
+COPY models /app
+COPY domain.yml /app
+COPY endpoints.yml /app
+COPY requirements.txt /app
+COPY socketChannel.py /app
+
 
 #VOLUME /app/data
 #VOLUME /app/models
