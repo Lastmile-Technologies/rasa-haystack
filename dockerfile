@@ -16,7 +16,7 @@ COPY domain.yml /app
 COPY endpoints.yml /app
 COPY requirements.txt /app
 COPY socketChannel.py /app
-
+COPY actions /app
 
 #VOLUME /app/data
 #VOLUME /app/models
