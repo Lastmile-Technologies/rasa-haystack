@@ -11,7 +11,7 @@ COPY data /app/data
 COPY config.yml /app
 COPY credentials.yml /app
 COPY data /app
-COPY models /app
+#COPY models /app
 COPY domain.yml /app
 COPY endpoints.yml /app
 COPY requirements.txt /app
