@@ -96,7 +96,7 @@ nlu:
       - εισαι χαζος
       - εισαι ζώο
       - πουτάνα lastmily
-      -
+      
 
   - intent: paok
     examples: |

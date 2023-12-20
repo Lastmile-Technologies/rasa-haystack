@@ -33,13 +33,17 @@ class ActionHaystack(Action):
 
         if response["answers"]:
             answer = response["answers"][0]["answer"]
-            logger.info("4444444444444444444444444444444444444444444444")
+
             logger.info(response["answers"][0]['score'])
             score=response["answers"][0]['score']
         else:
             answer = "No Answer Found!"
 
-        dispatcher.utter_message(text=answer,score=score)
+        if score > 0.45:
+            dispatcher.utter_message(text=answer,score=score)
+        else:
+            answer = "Δεν υπάρχει απάντηση στη βάση δεδομένων μου για αυτην την ερώτηση"
+            dispatcher.utter_message(text=answer, score=score)
 
 
         return []
